@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FMF</title>
+ 
+</head>
+<body>
+  
+  <h1 style="text-align: center; background-color: blanchedalmond;"> FEDERACIÓN MEXICANA DE FÚTBOL</h1>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-4">
+                
+        <img src="../assets/img/logo.png" alt="" width="100" style="vertical-align:middle;margin:0px 50px">
+        <div class="card">
+          <div class="card-body">
+            <div class="card-title">
+              Nuevo Regristro
+            </div>
+         
+            <!--comenzaré el boton para guardar otros registros-->
+            <div class="form-group" >
+              <input type="text"  placeholder="Ingrese Nombre" class="form-control" [(ngModel)]="selectedUsuario.nombre" id="validationName" required>
+            </div> <br>
+            <!--apellidos-->
+            <div class="row">
+              <div class="col">
+                <input type="text" class="form-control" placeholder="Apellido Paterno" [(ngModel)]="selectedUsuario.apepat" id="validationapepat" required>
+              </div>
+              <div class="col">
+                <input type="text" class="form-control" placeholder="Apellido Materno" [(ngModel)]="selectedUsuario.apemat" id="validationapemat" required>
+              </div>
+           </div>
+            <!--fin ape-->
+            <!--fecha nac-->
+            <div class="form-group">
+              <label for="exampleFormControlInput1">Fecha de Nacimiento</label>
+              <input type="date" class="form-control" id="exampleFormControlInput1"  required [(ngModel)]="selectedUsuario.fecnac">
+              
+            </div>
+            <!--fin-->
+            <!--sexo-->
+            <label for="exampleFormControlInput1">Genero</label>
+            <select class="form-control" required [(ngModel)]="selectedUsuario.sexo">
+              <option value=""></option>
+              <option value="Femenino">Femenino </option>
+              <option value="Masculino">Masculino</option>
+              <option value="Prefiero no decirlo">Prefiero no decirlo</option>
+            </select> 
+            <!--nacionalidad-->
+            <div class="form-group">
+              <!--input type="text"  placeholder="Nacionalidad" class="form-control" [(ngModel)]="selectedUsuario.naci" required-->
+              <label for="exampleFormControlInput1" >Nacionalidad</label>
+              <select name="" id="" class="form-control" [(ngModel)]="selectedUsuario.naci">
+                <option value=""></option>
+                <option value="🇲🇽&emsp; Mexicana">🇲🇽&emsp; Mexicana</option>
+                <option value="🇫🇷&emsp; Francesa">🇫🇷&emsp; Francesa</option>
+                <option value="🇦🇷&emsp; Argentina">🇦🇷&emsp; Argentina</option>
+                <option value="🇬🇧&emsp; Inglesa">🇬🇧&emsp; Inglesa</option>
+                <option value="🇩🇪&emsp; Alemana">🇩🇪&emsp; Alemana</option>
+                <option value="🇧🇷&emsp; Brasileña">🇧🇷&emsp; Brasileña</option>
+                <option value="🇳🇬&emsp; Nigeriana">🇳🇬&emsp; Nigeriana</option>
+                <option value="🇦🇺&emsp; Australia">🇦🇺&emsp; Australia</option>
+                <option value="🇯🇵&emsp; Japón">🇯🇵&emsp; Japón</option>
+                <option value="🇰🇷&emsp; Corea del Sur">🇰🇷&emsp; Corea del Sur</option>
+                <option value="🇨🇮&emsp; Costa de Marfil">🇨🇮&emsp; Costa de Marfil</option>
+              </select>
+             
+            </div>
+            <br>
+            <div class="form-group">
+              <!--input type="text"  placeholder="Club de Futbol" class="form-control" [(ngModel)]="selectedUsuario.club" required-->
+              <label for="exampleFormControlInput1">Club de Futbol</label>
+              <select class="form-control" required [(ngModel)]="selectedUsuario.club">
+                <option value=""></option>
+                <option value="Cruz Azul" style="background-image:url(../assets/img/cruz.png); width: 10%; height: 5%;">  Cruz Azul </option>
+                <option value="América">América</option>
+                <option value="Santos">Santos</option>
+                <option value="Monterrey F.C.">Monterrey F.C.</option>
+                <option value="Toluca F.C.">Toluca F.C.</option>
+                <option value="Atlas">Atlas</option>
+                <option value="Puebla F.C.">Puebla F.C.</option>
+                <option value="Xolos Tijuana">Xolos Tijuana</option>
+                <option value="León">León</option>
+                <option value="Querétaro F.C.">Querétaro F.C.</option>
+                <option value="Mazatlán F.C.">Mazatlán F.C.</option>
+                <option value="Pachuca">Pachuca</option>
+                <option value="Atlético San Luis">Atlético San Luis</option>
+                <option value="Tigres UANL">Tigres UANL</option>
+                <option value="UNAM">UNAM</option>
+                <option value="Chivas">Chivas</option>
+                <option value="Necaxa">Necaxa</option>
+                <option value="F.C. Juárez">F.C. Juárez</option>
+
+              </select>
+
+
+            </div>
+            <div class="form-group">
+              <label for="exampleFormControlInput1">RFC</label>
+              <input type="text" class="form-control" id="exampleFormControlInput1" required [(ngModel)]="selectedUsuario.rfc">
+            </div>
+            <br>
+            <div class="form-group">
+              <input type="text"  placeholder="Ocupación" class="form-control" [(ngModel)]="selectedUsuario.ocupacion" required>
+            </div> <br>
+
+            <button (click)="addOrEdit()" class="btn btn-primary">
+              Envíar
+            </button>
+            <div> <button class="btn col col-lg-4 btn-danger btn-block ml-4" (click)="downloadPDF()">download</button></div>
+          </div>
+        </div>
+        <!--end 2sec-->
+
+
+
+
+
+
+
+
+        
+      </div>
+      <div class="col-md-8">
+        <script>
+          function imprimir() {
+            window.print();
+          }
+          </script>
+        <ul class="list-group" style="background-image: url(../assets/img/fondo.jpg);">
+          <li *ngFor="let usuario of usuarioArray" class="list-group-item list-group-item-action">
+            <svg xmlns="http://www.w3.org/2000/svg" width="56" height="56" fill="currentColor" class="bi bi-person-circle" viewBox="0 0 16 16">
+              <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"/>
+              <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z"/>
+            </svg>  {{ usuario.nombre }} {{usuario.apepat}} {{usuario.apemat}}
+            <img src="../assets/img/logo.png" alt="" width="9%" style="margin:-12px 185px;">
+                <p style="margin:-12px 65px;">{{usuario.fecnac}} </p>     
+            <hr align="right" style="height: 5px;   width: 60%; background-color:rgb(8, 4, 255);" >
+                <p style="vertical-align:middle;margin:-12px 65px; font-size: 140%; text-transform: uppercase;"> {{usuario.ocupacion}}</p> <hr style="height: 5px;   width: 60%; background-color:rgb(8, 4, 255)">
+                <p style="font-size: 30;">Sexo {{usuario.sexo}} </p>   
+               <p style="text-transform: uppercase; color:red; font-style: italic; " > {{usuario.naci}} </p>
+        <p style="margin:-12px 65px;text-transform: uppercase;text-align: right; font-style: oblique;" >Club  {{usuario.club}} </p><br>  
+          <p style="margin:-12px 65px;text-align: right;"> RFC {{usuario.rfc}} </p>
+       <br>
+       <button onclick="window.print()"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-printer" viewBox="0 0 16 16">
+        <path d="M2.5 8a.5.5 0 1 0 0-1 .5.5 0 0 0 0 1z"/>
+        <path d="M5 1a2 2 0 0 0-2 2v2H2a2 2 0 0 0-2 2v3a2 2 0 0 0 2 2h1v1a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2v-1h1a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2h-1V3a2 2 0 0 0-2-2H5zM4 3a1 1 0 0 1 1-1h6a1 1 0 0 1 1 1v2H4V3zm1 5a2 2 0 0 0-2 2v1H2a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1v3a1 1 0 0 1-1 1h-1v-1a2 2 0 0 0-2-2H5zm7 2v3a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1v-3a1 1 0 0 1 1-1h6a1 1 0 0 1 1 1z"/>
+      </svg></button>
+       <br>
+            <!--br> Ocupación {{usuario.ocupacion}}<ss-->
+
+          </li>
+      </ul>
+      </div>
+    </div>
+  </div>
+
+
+  
+
+
+  <!--pdf 2-->
+  <div class="container2">
+    <div class="row">
+      <div id="htmlData" >
+       
+        <table class="table table-bordered mt-4" style="width: 1%;">
+        
+          <tr class="table-primary">
+            <th scope="col">Nombre</th>
+            <th scope="col">Fecha nacimiento</th>
+            <th scope="col">Genero</th>
+            <th scope="col">Nacionalidad</th>
+            <th scope="col">Club</th>
+            <th scope="col">RFC</th>
+            <th scope="col">Ocupación</th>
+          </tr>
+       
+          <tr *ngFor="let d of usuarioArray">
+            <th>{{d.nombre }} </th>
+            <td>{{d.fecnac }} </td>
+            <td>{{d.sexo}}</td>
+            <td>{{d.naci}}</td>
+            <td>{{d.club}}</td>
+            <td>{{d.rfc}}</td>
+            <td>{{d.ocupacion}}</td>
+          </tr>
+       
+        </table>
+      </div>
+    </div>
+  </div>
+  
+<!--fin-->  
+</body>
+</html>

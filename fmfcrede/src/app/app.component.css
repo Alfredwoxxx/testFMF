@@ -1,0 +1,5 @@
+.table tr:nth-child(1)
+{
+    background-color: brown;
+
+}
